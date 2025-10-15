@@ -1,0 +1,15 @@
+{
+  "name": "ai-selenium-test-demo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "mocha tests/selenium-js/signup.test.js --timeout 180000"
+  },
+  "dependencies": {
+    "selenium-webdriver": "^4.23.0",
+    "chromedriver": "^129.0.2"
+  },
+  "devDependencies": {
+    "mocha": "^10.2.0"
+  }
+}
