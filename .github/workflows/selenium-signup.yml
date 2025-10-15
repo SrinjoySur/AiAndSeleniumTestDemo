@@ -1,0 +1,36 @@
+name: Selenium JS SignUp Test
+
+on:
+  push:
+    branches:
+      - feature/selenium-js-signup
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Setup Chrome
+        uses: browser-actions/setup-chrome@v1
+
+      - name: Print Chrome version
+        run: |
+          google-chrome --version || true
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Selenium JS test
+        env:
+          CI: true
+        run: npm test
